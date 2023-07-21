@@ -1,11 +1,12 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
-#import views.py from the home app
-from home import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home',views.home)
+
+    #get url from urls.py from the home app.
+    path('',include('home.urls')),
 ]
