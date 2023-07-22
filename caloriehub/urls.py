@@ -9,4 +9,6 @@ urlpatterns = [
 
     #get url from urls.py from the home app.
     path('',include('home.urls')),
+
+    path('food/',include('food.urls')),
 ]
