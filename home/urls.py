@@ -4,6 +4,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('home',views.home),
+    #Using class-based view
+    path('home',views.HomeView.as_view()),
+
     path('authorized',views.authorized),
 ]
