@@ -4,8 +4,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.list),
+    path('',views.FoodListView.as_view()),
 
     #pass pk for each food item
-    path('<int:pk>',views.detail),
+    path('<int:pk>',views.FoodDetailView.as_view()),
 ]
