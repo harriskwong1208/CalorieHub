@@ -1,8 +1,13 @@
+{% load static %}
+
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
+    </head>
     <h1>Food list</h1>
     <ul>
         {% for item in food%}
-        <li>{{item.title}}</li>
+        <li class="food-li">{{item.title}}</li>
         {% endfor %}
     </ul>
 </html>
