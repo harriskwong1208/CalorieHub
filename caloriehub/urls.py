@@ -11,4 +11,5 @@ urlpatterns = [
     path('',include('home.urls')),
 
     path('food/',include('food.urls')),
+
 ]

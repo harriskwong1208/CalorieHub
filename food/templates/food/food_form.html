@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{%block content %}
+
+<form action="{% url 'food.new'%}" method="POST">
+    {{form}}
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}

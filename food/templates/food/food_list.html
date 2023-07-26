@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>Food list</h1>
+    <a href="{% url 'food.detail' pk=1 %}"><button>Click </button></a>
     <ul>
         {% for item in food%}
         <li class="food-li">{{item.title}}</li>

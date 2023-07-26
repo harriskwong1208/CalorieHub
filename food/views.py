@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
-from django.views.generic import DetailView,ListView
+from django.views.generic import CreateView,DetailView,ListView
 
 #for error raising
 from django.http import Http404
 
 from .models import Food
+
+class FoodCreateView(CreateView):
+    model = Food
+    fields = ['title','text','calories']
+    success_url = '/food/'
 
 class FoodListView(ListView):
     model = Food
