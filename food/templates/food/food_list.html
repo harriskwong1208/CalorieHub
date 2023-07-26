@@ -1,13 +1,10 @@
-{% load static %}
+{% extends "base.html" %}
 
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
-    </head>
+{% block content %}
     <h1>Food list</h1>
     <ul>
         {% for item in food%}
         <li class="food-li">{{item.title}}</li>
         {% endfor %}
     </ul>
-</html>
+{% endblock %}
