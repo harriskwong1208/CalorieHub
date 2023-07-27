@@ -2,7 +2,7 @@
 
 {%block content %}
 
-<form action="{% url 'food.new'%}" method="POST">
+<form action="{% url 'food.new'%}" method="POST">{% csrf_token %}
     {{form}}
     <button type="submit">Submit</button>
 </form>
