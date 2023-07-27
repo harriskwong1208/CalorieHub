@@ -6,10 +6,15 @@ from django.views.generic import CreateView,DetailView,ListView
 from django.http import Http404
 
 from .models import Food
+from .forms import FoodForm
 
 class FoodCreateView(CreateView):
     model = Food
-    fields = ['title','text','calories']
+    #imported from forms.py
+    form_class = FoodForm
+
+    #Does the same thing as above
+    # fields = ['title','text','calories']
     success_url = '/food/'
 
 class FoodListView(ListView):
