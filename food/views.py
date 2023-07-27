@@ -1,12 +1,17 @@
 from django.shortcuts import render
 
-from django.views.generic import CreateView,DetailView,ListView
+from django.views.generic import CreateView,DetailView,ListView,UpdateView
 
 #for error raising
 from django.http import Http404
 
 from .models import Food
 from .forms import FoodForm
+
+class FoodUpdateView(UpdateView):
+    model = Food
+    form_class = FoodForm
+    success_url = '/food/'    
 
 class FoodCreateView(CreateView):
     model = Food

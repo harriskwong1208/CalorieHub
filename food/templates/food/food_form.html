@@ -2,10 +2,12 @@
 
 {%block content %}
 
-<form action="{% url 'food.new'%}" method="POST">{% csrf_token %}
+<form  method="POST">{% csrf_token %}
     {{form}}
     <button type="submit">Submit</button>
 </form>
 
 
+
+<a href="{% url 'food.list'%}"><button>Cancel</button></a>
 {% endblock %}

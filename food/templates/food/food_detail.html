@@ -1,5 +1,12 @@
-<html>
+{% extends "base.html"%}
+
+{% block content %}
+
+
     <h1>{{food.title}} </h1>
 
     <p>{{food.text}}</p>
-</html>
+    <a href="{% url 'food.list'%}"><button>Back</button></a>
+    <a href="{% url 'food.update' pk=food.id %}"><button>Edit</button></a>
+
+{% endblock %}
