@@ -2,11 +2,19 @@ from django.shortcuts import render
 
 from django.views.generic import CreateView,DetailView,ListView,UpdateView
 
+#For delete views 
+from django.views.generic.edit import DeleteView
+
 #for error raising
 from django.http import Http404
 
 from .models import Food
 from .forms import FoodForm
+
+class FoodDeleteView(DeleteView):
+    model = Food
+    success_url = '/food/'
+    template_name = 'food/food_delete.html'
 
 class FoodUpdateView(UpdateView):
     model = Food

@@ -8,5 +8,6 @@
     <p>{{food.text}}</p>
     <a href="{% url 'food.list'%}"><button>Back</button></a>
     <a href="{% url 'food.update' pk=food.id %}"><button>Edit</button></a>
-
+    <a href="{% url 'food.delete' pk=food.id %}"><button>Delete</button></a>
+    
 {% endblock %}
