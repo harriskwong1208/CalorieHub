@@ -13,6 +13,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 
+from django.shortcuts import redirect 
 
 #Using a class-based view to render out template
 class HomeView(TemplateView):
@@ -44,3 +45,8 @@ class SignupView(CreateView):
         form_class = UserCreationForm
         template_name = 'home/register.html'
         success_url = '/food/'
+
+        def get(self,request,*args,**kwargs):
+            if self.request.user.is_authenticated:
+                 return redirect('food.list')
+            return super().get(request,*args,**kwargs)
