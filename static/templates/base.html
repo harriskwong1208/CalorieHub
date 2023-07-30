@@ -5,8 +5,9 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
     </head>
     <body>
-        <div style="text-align: center;">
-            <h1>CalorieHub</h1></div>
+        <div style="text-align: center; background-color: blue;padding: 2%;">
+            <a href="{% url 'home'%}"><h1>CalorieHub</h1></a>
+        </div>
         {% block content %}
 
 
