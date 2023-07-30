@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #Used for class-base views
 from django.views.generic import TemplateView
 
+from django.contrib.auth.views import LoginView, LogoutView
+
 #Using a class-based view to render out template
 class HomeView(TemplateView):
     template_name = 'home/welcome.html'
@@ -27,3 +29,9 @@ class AuthorizedView(LoginRequiredMixin,TemplateView):
     template_name = 'home/authorized.html'
     login_url = '/admin'
 
+class LoginInterfaceView(LoginView):
+    template_name = 'home/login.html'
+    success_url = '/food'
+    
+class LogoutInterfaceView(LogoutView):
+    template_name = 'home/logout.html'

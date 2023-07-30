@@ -18,13 +18,13 @@ class FoodDeleteView(LoginRequiredMixin,DeleteView):
     model = Food
     success_url = '/food/'
     template_name = 'food/food_delete.html'
-    login_url = '/admin'
+    login_url = '/login'
 
 class FoodUpdateView(LoginRequiredMixin,UpdateView):
     model = Food
     form_class = FoodForm
     success_url = '/food/'    
-    login_url = '/admin'
+    login_url = '/login'
 
 class FoodCreateView(LoginRequiredMixin,CreateView):
     model = Food
@@ -33,7 +33,7 @@ class FoodCreateView(LoginRequiredMixin,CreateView):
 
     #Does the same thing as above
     # fields = ['title','text','calories']
-    login_url = '/admin'
+    login_url = '/login'
     success_url = '/food'
 
     # When a user submits a form, this method is called. 
@@ -54,7 +54,7 @@ class FoodListView(LoginRequiredMixin,ListView):
     #Change it from default name("objects") to 'food'
     context_object_name = 'food'
     template_name = 'food/food_list.html'
-    login_url = '/admin/'
+    login_url = '/login'
 
     def get_queryset(self):
         return self.request.user.food.all()
@@ -71,7 +71,7 @@ class FoodListView(LoginRequiredMixin,ListView):
 class FoodDetailView(LoginRequiredMixin,DetailView):
     model = Food
     context_object_name = "food"
-    login_url = '/admin'
+    login_url = '/login'
 
 
 #function based view, does the same thing as above

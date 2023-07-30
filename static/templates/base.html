@@ -8,6 +8,14 @@
         <div style="text-align: center; background-color: blue;padding: 2%;">
             <a href="{% url 'home'%}"><h1>CalorieHub</h1></a>
         </div>
+        <div style="text-align: center;display: inline;margin-right: 2%;">
+            <a href="{% url 'login' %}">
+                <button>Login</button>
+            </a>
+            <a href="{% url 'logout' %}">
+                <button>Logout</button>
+            </a>
+        </div>
         {% block content %}
 
 
