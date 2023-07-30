@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Food list</h1>
+    <h1 style="display: inline; margin-right: 1%;">Food list</h1>
+    <a href="{% url 'food.new' %}" >
+        <button>Enter new food</button>
+    </a>
     <ul>
         {% for item in food%}
         <li class="food-li">{{item.title}}
