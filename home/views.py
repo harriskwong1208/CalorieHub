@@ -9,7 +9,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #Used for class-base views
 from django.views.generic import TemplateView
 
+from django.views.generic.edit import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.forms import UserCreationForm
+
 
 #Using a class-based view to render out template
 class HomeView(TemplateView):
@@ -35,3 +38,9 @@ class LoginInterfaceView(LoginView):
     
 class LogoutInterfaceView(LogoutView):
     template_name = 'home/logout.html'
+
+
+class SignupView(CreateView):
+        form_class = UserCreationForm
+        template_name = 'home/register.html'
+        success_url = '/food/'
