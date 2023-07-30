@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 
 from django.views.generic import CreateView,DetailView,ListView,UpdateView
@@ -8,6 +10,7 @@ from django.views.generic.edit import DeleteView
 #for error raising
 from django.http import Http404
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Food
 from .forms import FoodForm
 
@@ -30,11 +33,16 @@ class FoodCreateView(CreateView):
     # fields = ['title','text','calories']
     success_url = '/food/'
 
-class FoodListView(ListView):
+#LoginRequireMIxin = only list food items that belows to the user
+class FoodListView(LoginRequiredMixin,ListView):
     model = Food
     #Change it from default name("objects") to 'food'
     context_object_name = 'food'
     template_name = 'food/food_list.html'
+    login_url = '/admin/'
+
+    def get_queryset(self):
+        return self.request.user.food.all()
 
 #function classed view, does the same thing from above
 # def list(request):
