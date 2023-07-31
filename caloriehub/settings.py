@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'home',
     'food',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

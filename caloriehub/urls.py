@@ -12,4 +12,6 @@ urlpatterns = [
 
     path('food/',include('food.urls')),
 
+    #for api
+    path('api/',include('home.api.urls'))
 ]
